@@ -1,4 +1,4 @@
-public class Aeronef {
+public class Aeronef implements Comparable<Aeronef> {
     private final AeronefType type;
     private Airport CurrentAirport;
     private final Pilot pilot;
@@ -10,7 +10,7 @@ public class Aeronef {
 
     public Aeronef(AeronefType type, Airport currentAirport, Pilot pilot, int capacity, double priceKM, int autonomie, int vitesse, int model_number) {
         this.type = type;
-        CurrentAirport = currentAirport;
+        CurrentAirport = new Airport(currentAirport);
         this.pilot = pilot;
         this.capacity = capacity;
         this.priceKM = priceKM;
@@ -49,5 +49,32 @@ public class Aeronef {
 
     public int getModel_number() {
         return model_number;
+    }
+
+    @Override
+    public String toString() {
+        return "Aeronef{" +
+                "type=" + type +
+                ", CurrentAirport=" + CurrentAirport +
+                ", pilot=" + pilot +
+                ", capacity=" + capacity +
+                ", priceKM=" + priceKM +
+                ", autonomie=" + autonomie +
+                ", vitesse=" + vitesse +
+                ", model_number=" + model_number +
+                '}';
+    }
+
+    @Override
+    public int compareTo(Aeronef other) {
+        int AeronefComparison = this.type.compareTo(other.type);
+
+        if (AeronefComparison != 0)
+            return AeronefComparison;
+        else {
+            Integer firstCap = this.capacity;
+            Integer secondCap = other.capacity;
+            return firstCap.compareTo(secondCap);
+        }
     }
 }

@@ -11,6 +11,11 @@ public class Airport {
         this.city = city;
     }
 
+    public Airport(Airport other)
+    {
+        this.copy(other);
+    }
+
     public String getName() {
         return name;
     }
@@ -25,6 +30,12 @@ public class Airport {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public void copy(Airport other)
+    {
+        this.setCity(other.getCity());
+        this.setName(other.getName());
     }
 
     @Override
