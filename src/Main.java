@@ -1,10 +1,13 @@
+import java.sql.Array;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Integer>Arr = new ArrayList<>();
+        ArrayList<Reservation>Arr = new ArrayList<>();
+        //Reservation R1 = new Reservation(500, "Otopeni", "Marseille", 1, false, new Vol() )
+        /*ArrayList<Integer>Arr = new ArrayList<>();
 
         Arr.add(12);
         Arr.add(1);
@@ -18,12 +21,17 @@ public class Main {
         Arr.add(32);
         Arr.add(73);
         Arr.add(909);
+        Arr.add(0);
+        Arr.add(909);
+        Arr.add(2);
+        Arr.add(2);
         System.out.println(Arr);
         SortingAlgos<Integer> Sorter = new SortingAlgos<>();
-        Sorter.quicksort(Arr, 0, Arr.size() - 1);
+        Sorter.mergeSort(Arr, 0, Arr.size() - 1);
         System.out.println(Arr);
+         */
 
-        ArrayList<Aeronef>ArrAeronef = new ArrayList<>();
+       /* ArrayList<Aeronef>ArrAeronef = new ArrayList<>();
        Director director = new Director();
 
        AeronefBuilder builder = new AeronefBuilder();
@@ -54,7 +62,7 @@ public class Main {
         for(Aeronef aero : ArrAeronef)
         {
             System.out.println(aero.toString());
-        }
+        }*/
         /*aeronefIterator = ArrAeronef.iterator();
         while(aeronefIterator.hasNext())
         {

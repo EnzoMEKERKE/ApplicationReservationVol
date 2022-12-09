@@ -1,6 +1,3 @@
-package Personnes;
-
-import Partie_vol.Reservation;
 
 import java.util.ArrayList;
 

@@ -1,5 +1,3 @@
-package Personnes;
-
 import java.util.Objects;
 
 public abstract class Utilisateur {

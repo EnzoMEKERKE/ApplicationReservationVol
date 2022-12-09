@@ -1,8 +1,3 @@
-package Personnes;
-
-import Partie_vol.Reservation;
-import Partie_vol.Vol;
-
 import java.util.ArrayList;
 
 public class Admin extends Utilisateur {

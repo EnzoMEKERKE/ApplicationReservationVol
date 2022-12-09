@@ -1,5 +1,3 @@
-package Partie_vol;
-
 import java.util.Objects;
 
 public class Vol {

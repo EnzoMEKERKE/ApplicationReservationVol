@@ -1,9 +1,7 @@
-
-package Partie_vol;
-
+import java.util.Comparator;
 import java.util.Objects;
 
-public class Reservation {
+public class Reservation implements Comparable<Reservation> {
     private int price;
     private String departure;
     private String arrival;
@@ -91,5 +89,20 @@ public class Reservation {
                 ", isFull=" + isFull +
                 ", flight=" + flight +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Reservation other) {
+        Integer firstPrice = this.price;
+        Integer secondPrice = other.price;
+
+        int ReservationComparison = firstPrice.compareTo(secondPrice);
+
+        if(ReservationComparison != 0)
+            return ReservationComparison;
+        else{
+            if(!this.isFull || other.isFull) return 1;
+            else return -1;
+        }
     }
 }
