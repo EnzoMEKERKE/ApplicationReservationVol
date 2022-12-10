@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Admin extends Utilisateur {
 
-    private int id_connection;
+    private final int id_connection;
 
     public Admin(String nom, String prenom, String adresse, String telephone, int id_connection) {
         super(nom, prenom, adresse, telephone);

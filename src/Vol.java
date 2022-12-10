@@ -4,17 +4,27 @@ public class Vol {
     private String departure;
     private String arrival;
     private int idFlight;
-    // A faire lorsque classe aeronef faîte     private aeronef avion;
+
+    private Aeronef avion;
     private int nbPlacesOccupees;
+
+    //dd/mm/yyyy
     private String departureDate;
+
+    //dd/mm/yyyy
     private String arrivalDate;
+
+    //0 - 24
     private String departureHour;
+
+    //0 - 24
     private String arrivalHour;
 
-    public Vol(String departure, String arrival, int idFlight, int nbPlacesOccupees, String departureDate, String arrivalDate, String departureHour, String arrivalHour) {
+    public Vol(String departure, String arrival, int idFlight, Aeronef avion,  int nbPlacesOccupees, String departureDate, String arrivalDate, String departureHour, String arrivalHour) {
         this.departure = departure;
         this.arrival = arrival;
         this.idFlight = idFlight;
+        this.avion = avion;
         this.nbPlacesOccupees = nbPlacesOccupees;
         this.departureDate = departureDate;
         this.arrivalDate = arrivalDate;
@@ -22,6 +32,23 @@ public class Vol {
         this.arrivalHour = arrivalHour;
     }
 
+    public Vol(Vol other)
+    {
+        this.copy(other);
+    }
+
+    public void copy(Vol other)
+    {
+        this.setDeparture(other.getDeparture());
+        this.setArrival(other.getArrival());
+        this.setIdFlight(other.getIdFlight());
+        this.setAvion(other.getAvion());
+        this.setNbPlacesOccupees(other.getNbPlacesOccupees());
+        this.setDepartureDate(other.getDepartureDate());
+        this.setDepartureHour(other.getDepartureHour());
+        this.setArrivalDate(other.getArrivalDate());
+        this.setArrivalHour(other.getArrivalHour());
+    }
     public String getDeparture() {
         return departure;
     }
@@ -78,6 +105,14 @@ public class Vol {
         this.departureHour = departureHour;
     }
 
+    public Aeronef getAvion() {
+        return avion;
+    }
+
+    public void setAvion(Aeronef avion) {
+        this.avion = avion;
+    }
+
     public String getArrivalHour() {
         return arrivalHour;
     }
@@ -105,6 +140,7 @@ public class Vol {
                 "departure='" + departure + '\'' +
                 ", arrival='" + arrival + '\'' +
                 ", idFlight=" + idFlight +
+                ", avion=" + avion +
                 ", nbPlacesOccupees=" + nbPlacesOccupees +
                 ", departureDate='" + departureDate + '\'' +
                 ", arrivalDate='" + arrivalDate + '\'' +

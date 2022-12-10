@@ -15,7 +15,7 @@ public class Reservation implements Comparable<Reservation> {
         this.arrival = arrival;
         this.id = id;
         this.isFull = isFull;
-        this.flight = flight;
+        this.flight = new Vol(flight);
     }
 
     public int getPrice() {
@@ -64,6 +64,21 @@ public class Reservation implements Comparable<Reservation> {
 
     public void setFlight(Vol flight) {
         this.flight = flight;
+    }
+
+    public void applyDiscount(int discount)
+    {
+        try{
+                if(this.getPrice() < discount)
+                    throw new MyException("Discount bigger than actual price");
+                else {
+                    this.setPrice(this.getPrice() - discount);
+                    System.out.println("The new price is: " + this.getPrice());
+                }
+        }catch (MyException e)
+        {
+            System.out.println(e.getMessage());
+        }
     }
 
     @Override

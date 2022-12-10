@@ -1,76 +1,98 @@
-import java.sql.Array;
-import java.sql.SQLOutput;
-import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 public class Main {
+
+    public static int countVol = 0;
     public static void main(String[] args) {
-        ArrayList<Reservation>Arr = new ArrayList<>();
-        //Reservation R1 = new Reservation(500, "Otopeni", "Marseille", 1, false, new Vol() )
-        /*ArrayList<Integer>Arr = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
 
-        Arr.add(12);
-        Arr.add(1);
-        Arr.add(12);
-        Arr.add(2000);
-        Arr.add(5);
-        Arr.add(120);
-        Arr.add(12131);
-        Arr.add(0);
-        Arr.add(7);
-        Arr.add(32);
-        Arr.add(73);
-        Arr.add(909);
-        Arr.add(0);
-        Arr.add(909);
-        Arr.add(2);
-        Arr.add(2);
-        System.out.println(Arr);
-        SortingAlgos<Integer> Sorter = new SortingAlgos<>();
-        Sorter.mergeSort(Arr, 0, Arr.size() - 1);
-        System.out.println(Arr);
-         */
+        Director director = new Director();
+        AeronefBuilder builder = new AeronefBuilder();
+        director.constructDR400(builder);
+        Aeronef aeronef1 = builder.getResult();
+        System.out.println(aeronef1);
 
-       /* ArrayList<Aeronef>ArrAeronef = new ArrayList<>();
-       Director director = new Director();
+    }
 
-       AeronefBuilder builder = new AeronefBuilder();
-       director.constructDR400(builder);
+    public static Aeronef createAeronef()
+    {
+        return null;
+    }
 
-       Aeronef aeronef1 =  builder.getResult();
-       director.constructCESSNA152(builder);
-       Aeronef aeronef2 = builder.getResult();
-       director.constructCESSNA152(builder);
-       Aeronef aeronef3 = builder.getResult();
-       director.constructFOUGA_MAGISTER(builder);
-       Aeronef aeronef4 = builder.getResult();
-       director.constructPA28(builder);
-       Aeronef aeronef5 = builder.getResult();
-       ArrAeronef.add(aeronef4);
-       ArrAeronef.add(aeronef2);
-       ArrAeronef.add(aeronef3);
-       ArrAeronef.add(aeronef5);
-       ArrAeronef.add(aeronef1);
-       Iterator<Aeronef> aeronefIterator = ArrAeronef.iterator();
-        while(aeronefIterator.hasNext())
+    public static Vol createVol(Scanner scanner)
+    {
+        System.out.println("Please enter the departure city: ");
+        String departure = scanner.nextLine();
+        System.out.println("Please enter the arrival city: ");
+        String arrival = scanner.nextLine();
+        int idFlight = countVol++;
+
+        Aeronef avion = createAeronef();
+
+        //Check departureDate to follow format:
+        String departureDate;
+        do {
+            System.out.println("Please enter the departure date in format 'dd/mm/yyyy' : ");
+
+            departureDate = scanner.nextLine();
+        } while (!isValidDate(departureDate));
+
+        //Check arrivalDate to follow format;
+        String arrivalDate;
+        do {
+            System.out.println("Please enter the arrival date in format 'dd/mm/yyyy' : ");
+
+            arrivalDate = scanner.nextLine();
+        } while (!isValidDate(arrivalDate) || arrivalDate.compareTo(departureDate) < 0);
+
+        String departureHour;
+        do {
+            System.out.println("Please enter the departure hour in format 'HH:mm' : ");
+
+            departureHour = scanner.nextLine();
+        } while (!isValidHour(departureHour));
+
+        String arrivalHour;
+        do {
+            System.out.println("Please enter the arrival hour in format 'HH:mm' : ");
+
+            arrivalHour = scanner.nextLine();
+        } while (!isValidHour(arrivalHour) || (departureDate.compareTo(arrivalDate) == 0 && arrivalHour.compareTo(departureHour) < 0));
+
+        return new Vol(departure, arrival, idFlight, avion, 0, departureDate, arrivalDate, departureHour, arrivalHour);
+    }
+
+    public static boolean isValidDate(String date)
+    {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        dateFormat.setLenient(false);
+
+        try {
+            dateFormat.parse(date.trim());
+
+        } catch(ParseException p)
         {
-            System.out.println(aeronefIterator.next().toString());
+            System.out.println("Invalid format");
+            return false;
         }
-        System.out.println("After sorting");
-        SortingAlgos<Aeronef> aeronefSorter = new SortingAlgos<>();
-        aeronefSorter.quicksort(ArrAeronef, 0, ArrAeronef.size() - 1);
-        for(Aeronef aero : ArrAeronef)
+        return true;
+    }
+
+    public static boolean isValidHour(String hour)
+    {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm");
+        dateFormat.setLenient(false);
+
+        try {
+            dateFormat.parse(hour.trim());
+
+        } catch(ParseException p)
         {
-            System.out.println(aero.toString());
-        }*/
-        /*aeronefIterator = ArrAeronef.iterator();
-        while(aeronefIterator.hasNext())
-        {
-            System.out.println(aeronefIterator.next().toString());
+            System.out.println("Invalid format");
+            return false;
         }
-        */
-        //System.out.println(aeronef.compareTo(aeronef2));
-        //System.out.println(aeronefSorter.partition());
-        //System.out.println();
+        return true;
     }
 }

@@ -47,6 +47,14 @@ public class Airport {
     }
 
     @Override
+    public String toString() {
+        return "Airport{" +
+                "name='" + name + '\'' +
+                ", city='" + city + '\'' +
+                '}';
+    }
+
+    @Override
     public int hashCode() {
         return Objects.hash(name, city);
     }

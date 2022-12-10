@@ -17,11 +17,11 @@ public class AeronefBuilder implements Builder{
     @Override
     public void setCurrentAirport(Airport airport)
     {
-        this.CurrentAirport = airport;
+        this.CurrentAirport = new Airport(airport);
     }
     @Override
     public void setPilot(Pilot pilot) {
-        this.pilot = pilot;
+        this.pilot = new Pilot(pilot);
     }
 
     @Override
