@@ -5,7 +5,7 @@ public interface Builder {
     void setCurrentAirport(Airport airport);
     void setPilot(Pilot pilot);
     void setCapacity(int capacity);
-    void setPriceKM(int priceKM);
+    void setPriceKM(double priceKM);
     void setAutonomie(int autonomie);
     void setVitesse(int vitesse);
 

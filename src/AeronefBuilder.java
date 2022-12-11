@@ -30,7 +30,7 @@ public class AeronefBuilder implements Builder{
     }
 
     @Override
-    public void setPriceKM(int priceKM) {
+    public void setPriceKM(double priceKM) {
         this.priceKM = priceKM;
     }
 

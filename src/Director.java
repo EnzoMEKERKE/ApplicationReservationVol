@@ -57,12 +57,11 @@ public class Director {
         scanner.nextLine();
 
         System.out.println("Please enter the price per kilometer of the plane: ");
-        builder.setPriceKM(scanner.nextInt());
+        builder.setPriceKM(scanner.nextDouble());
         scanner.nextLine();
 
         System.out.println("Please enter the speed of the plane: ");
         builder.setVitesse(scanner.nextInt());
-        scanner.nextLine();
     }
 
 }

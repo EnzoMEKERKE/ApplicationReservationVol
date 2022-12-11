@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Objects;
 
 public abstract class Utilisateur {
@@ -13,6 +14,10 @@ public abstract class Utilisateur {
         this.telephone = telephone;
     }
 
+    public void addReservation(ArrayList<Reservation> reservations)
+    {
+        System.out.println("Class utilisateur");
+    }
     public String getNom() {
         return nom;
     }
