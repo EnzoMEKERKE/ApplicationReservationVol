@@ -10,7 +10,7 @@ public class Creator {
 
     public static Reservation createReservation()
     {
-        Reservation r = new Reservation(0, null, null, 0, false, new Vol(null, null, 0, null, 0, null, null, null, null));
+        Reservation r = new Reservation(0, null, null, 0, false, new Flight(null, null, 0, null, 0, null, null, null, null));
         System.out.println("Please enter the price of the reservation: ");
         r.setPrice(scanner.nextInt());
         scanner.nextLine();
@@ -24,7 +24,7 @@ public class Creator {
         r.setId(scanner.nextInt());
         scanner.nextLine();
 
-        r.setFlight(createVol());
+        r.setFlight(createVol(r));
         return r;
     }
 
@@ -68,7 +68,48 @@ public class Creator {
         return builder.getResult();
     }
 
-    public static Vol createVol()
+    public static Flight createVol(Reservation r)
+    {
+        String departure = r.getDeparture();
+        String arrival = r.getArrival();
+        int idFlight = countVol++;
+
+        Aeronef avion = createAeronef();
+
+        scanner.nextLine();
+        //Check departureDate to follow format:
+        String departureDate;
+        do {
+            System.out.println("Please enter the departure date in format 'dd/mm/yyyy' : ");
+
+            departureDate = scanner.nextLine();
+        } while (!isValidDate(departureDate));
+
+        //Check arrivalDate to follow format;
+        String arrivalDate;
+        do {
+            System.out.println("Please enter the arrival date in format 'dd/mm/yyyy' : ");
+
+            arrivalDate = scanner.nextLine();
+        } while (!isValidDate(arrivalDate) || arrivalDate.compareTo(departureDate) < 0);
+
+        String departureHour;
+        do {
+            System.out.println("Please enter the departure hour in format 'HH:mm' : ");
+
+            departureHour = scanner.nextLine();
+        } while (!isValidHour(departureHour));
+
+        String arrivalHour;
+        do {
+            System.out.println("Please enter the arrival hour in format 'HH:mm' : ");
+
+            arrivalHour = scanner.nextLine();
+        } while (!isValidHour(arrivalHour) || (departureDate.compareTo(arrivalDate) == 0 && arrivalHour.compareTo(departureHour) < 0));
+
+        return new Flight(departure, arrival, idFlight, avion, 0, departureDate, arrivalDate, departureHour, arrivalHour);
+    }
+    public static Flight createVol()
     {
         System.out.println("Please enter the departure city: ");
         String departure = scanner.nextLine();
@@ -109,7 +150,7 @@ public class Creator {
             arrivalHour = scanner.nextLine();
         } while (!isValidHour(arrivalHour) || (departureDate.compareTo(arrivalDate) == 0 && arrivalHour.compareTo(departureHour) < 0));
 
-        return new Vol(departure, arrival, idFlight, avion, 0, departureDate, arrivalDate, departureHour, arrivalHour);
+        return new Flight(departure, arrival, idFlight, avion, 0, departureDate, arrivalDate, departureHour, arrivalHour);
     }
 
     public static boolean isValidDate(String date)

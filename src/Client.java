@@ -3,7 +3,6 @@ import java.util.ArrayList;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Map;
 
 public class Client extends Utilisateur {
 
@@ -18,7 +17,7 @@ public class Client extends Utilisateur {
             reservations.add(reservation);
     }
 
-    public void addReservation(int price, String departure, String arrival, int id, Vol flight)
+    public void addReservation(int price, String departure, String arrival, int id, Flight flight)
     {
         reservations.add(new Reservation(price, departure, arrival, id, false, flight));
     }

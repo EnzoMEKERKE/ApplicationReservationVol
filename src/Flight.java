@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public class Vol {
+public class Flight {
     private String departure;
     private String arrival;
     private int idFlight;
@@ -20,7 +20,7 @@ public class Vol {
     //0 - 24
     private String arrivalHour;
 
-    public Vol(String departure, String arrival, int idFlight, Aeronef avion,  int nbPlacesOccupees, String departureDate, String arrivalDate, String departureHour, String arrivalHour) {
+    public Flight(String departure, String arrival, int idFlight, Aeronef avion, int nbPlacesOccupees, String departureDate, String arrivalDate, String departureHour, String arrivalHour) {
         this.departure = departure;
         this.arrival = arrival;
         this.idFlight = idFlight;
@@ -32,12 +32,12 @@ public class Vol {
         this.arrivalHour = arrivalHour;
     }
 
-    public Vol(Vol other)
+    public Flight(Flight other)
     {
         this.copy(other);
     }
 
-    public void copy(Vol other)
+    public void copy(Flight other)
     {
         this.setDeparture(other.getDeparture());
         this.setArrival(other.getArrival());
@@ -125,8 +125,8 @@ public class Vol {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Vol vol = (Vol) o;
-        return idFlight == vol.idFlight && nbPlacesOccupees == vol.nbPlacesOccupees && departure.equals(vol.departure) && arrival.equals(vol.arrival) && departureDate.equals(vol.departureDate) && arrivalDate.equals(vol.arrivalDate) && departureHour.equals(vol.departureHour) && arrivalHour.equals(vol.arrivalHour);
+        Flight flight = (Flight) o;
+        return idFlight == flight.idFlight && nbPlacesOccupees == flight.nbPlacesOccupees && departure.equals(flight.departure) && arrival.equals(flight.arrival) && departureDate.equals(flight.departureDate) && arrivalDate.equals(flight.arrivalDate) && departureHour.equals(flight.departureHour) && arrivalHour.equals(flight.arrivalHour);
     }
 
     @Override

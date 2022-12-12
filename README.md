@@ -1,5 +1,5 @@
 # ApplicationReservationVol
-Ce dépôt contient une application en Java de réservation de vol.
+Ce dépôt contient une application en Java de réservation de flight.
 
 ### Les prérequis (Windows)
 Suivre cette procédure si vous n'avez pas l'application JAVA sur votre PC :

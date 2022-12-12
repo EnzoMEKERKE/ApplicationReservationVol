@@ -1,4 +1,3 @@
-import java.security.spec.RSAOtherPrimeInfo;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -44,28 +43,91 @@ public class Admin extends Utilisateur {
 
     }
 
-//    public void addVol(ArrayList<Vol> ) {
-//
-//    }
+   public void addVol(ArrayList<Flight> flights) {
+       System.out.println("Please introduce data for the flight that you are willing to add: ");
+       Flight v = Creator.createVol();
+       flights.add(v);
+       System.out.println("The flight " + v.toString() + " has been added");
+    }
 
-//    public void deleteVol(ArrayList<Vol>) {
-//
-//    }
+    public void deleteVol(ArrayList<Flight> flights) {
+        if(flights.isEmpty())
+        {
+            System.out.println("There are currently no flights available");
+            return;
+        }
+        System.out.println("Currently available flights: ");
+        for(int i = 1; i <= flights.size(); ++i)
+            System.out.println(i + ". " + flights.get(i - 1).toString());
 
-//    public void addAeroport(ArrayList<Aeroport>) {
-//
-//    }
+        System.out.println("Select the number of the flight that you would like to delete: ");
+        Scanner scanner = new Scanner(System.in);
+        int selectOption = scanner.nextInt();
+        if(selectOption > flights.size())
+        {
+            System.out.println("Invalid number");
+        }
+        else {
+            flights.remove(selectOption - 1);
+        }
+    }
 
-    //public void deleteAeroport(ArrayList<Aeroport>) {
-//
-//    }
+    public void addAeroport(ArrayList<Airport> airports) {
+        System.out.println("Please introduce data for the airport that you are willing to add: ");
+        Airport a = Creator.createAirport();
+        airports.add(a);
+        System.out.println("The airport " + a.toString() + " has been added");
+    }
 
-    //    public void addAeronef(ArrayList<Aeronef>) {
-//
-//    }
+    public void deleteAeroport(ArrayList<Airport> airports ) {
+        if(airports.isEmpty())
+        {
+            System.out.println("There are currently no airports available");
+            return;
+        }
+        System.out.println("Currently available airports: ");
+        for(int i = 1; i <= airports.size(); ++i)
+            System.out.println(i + ". " + airports.get(i - 1).toString());
 
-    //    public void deleteAeronef(ArrayList<Aeronef>) {
-//
-//    }
+        System.out.println("Select the number of the airport that you would like to delete: ");
+        Scanner scanner = new Scanner(System.in);
+        int selectOption = scanner.nextInt();
+        if(selectOption > airports.size())
+        {
+            System.out.println("Invalid number");
+        }
+        else {
+            airports.remove(selectOption - 1);
+        }
+    }
 
+    public void addAeronef(ArrayList<Aeronef> planes) {
+        System.out.println("Please introduce data for the plane that you are willing to add: ");
+        Aeronef a = Creator.createAeronef();
+        planes.add(a);
+        System.out.println("The plane " + a.toString() + " has been added");
+    }
+
+    public void deleteAeronef(ArrayList<Aeronef> planes) {
+        if(planes.isEmpty())
+        {
+            System.out.println("There are currently no planes available");
+            return;
+        }
+        System.out.println("Currently available planes: ");
+        for(int i = 1; i <= planes.size(); ++i)
+            System.out.println(i + ". " + planes.get(i - 1).toString());
+
+        System.out.println("Select the number of the plane that you would like to delete: ");
+        Scanner scanner = new Scanner(System.in);
+        int selectOption = scanner.nextInt();
+        if(selectOption > planes.size())
+        {
+            System.out.println("Invalid number");
+        }
+        else {
+            planes.remove(selectOption - 1);
+        }
+
+    }
 }
