@@ -11,6 +11,10 @@ public class Admin extends Utilisateur {
         this.id_connection = id_connection;
     }
 
+    public int getId_connection()
+    {
+        return id_connection;
+    }
     //Adding reservations that will be accessible to all customers:
     public void addReservation(ArrayList<Reservation> reservations) {
         System.out.println("Please introduce data for the reservation that you are willing to add: ");

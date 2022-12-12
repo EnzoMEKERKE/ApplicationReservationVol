@@ -8,6 +8,10 @@ public class Client extends Utilisateur {
 
     private ArrayList<Reservation> reservations;
 
+    public ArrayList<Reservation> getReservations() {
+        return reservations;
+    }
+
     public Client(String nom, String prenom, String adresse, String telephone) {
         super(nom, prenom, adresse, telephone);
         this.reservations = new ArrayList<>();
@@ -56,8 +60,8 @@ public class Client extends Utilisateur {
 
     public void seeReservations() {
         if(reservations.size() == 0) System.out.println("La liste est vide");
-        for(Reservation res: reservations)
-            System.out.println(res);
+        for(int i = 0; i < reservations.size(); ++i)
+            System.out.println(i + ". " + reservations.get(i).toString());
     }
 
     public void seeReservationByCity(String depart, HashMap<String, ArrayList<Reservation>>Map)
@@ -68,6 +72,14 @@ public class Client extends Utilisateur {
         }
     }
 
+    public void seeReservationByDepartureAndArrival(String departure, String arrival,  HashMap<String, ArrayList<Reservation>>Map)
+    {
+        for(Reservation res : Map.get(departure))
+        {
+            if(res.getArrival().equals(arrival))
+                 System.out.println(res);
+        }
+    }
 //    public void seeAllReservations() {
 //
 //    }

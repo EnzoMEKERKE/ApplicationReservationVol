@@ -9,12 +9,24 @@ public class Reservation implements Comparable<Reservation> {
     private Flight flight;
 
     public Reservation(int price, String departure, String arrival, int id, boolean isFull, Flight flight) {
-        this.price = price;
-        this.departure = departure;
-        this.arrival = arrival;
-        this.id = id;
-        this.isFull = isFull;
-        this.flight = new Flight(flight);
+        try {
+            if (flight.getNbPlacesOccupees() >= flight.getAvion().getCapacity())
+                throw new MyException("The plane is already full, can not make reservation");
+
+            this.price = price;
+            this.departure = departure;
+            this.arrival = arrival;
+            this.id = id;
+            if(flight.getNbPlacesOccupees() == flight.getAvion().getCapacity() - 1)
+                this.isFull = true;
+            else
+                this.isFull = isFull;
+            flight.setNbPlacesOccupees(flight.getNbPlacesOccupees() + 1);
+            this.flight = new Flight(flight);
+        }catch(MyException e)
+        {
+            System.out.println(e.getMessage());
+        }
     }
 
     public int getPrice() {
