@@ -1,19 +1,28 @@
-# ApplicationReservationVol
-Ce dépôt contient une application en Java de réservation de flight.
+# AppAirline
 
-### Les prérequis (Windows) 
-JAVA 19
+ce dépôt contient une application JAVA simulant une réservation de vol.
 
-Pour connaître sa version de JAVA sur Linux : saisissez cette commande 
+## Les prérequis
 
-https://user-images.githubusercontent.com/92160495/207284554-9cb9c616-0fd5-47d6-bdcf-9be4c51c49c8.png
-
-#####sudo -apt
-
-### Les prérequis (Linux)!
+Vous aurez besoin de __JAVA 19__
 
 
+Pour connaître sa version de JAVA sur terminal (Linux et Windows) :
 
-## Comment exécuter l'application ?
+```bash
+  java -version
+```
 
-1. Placer le fichier JAR dans le même répertoire que l'application JAVA (Son emplacement par défaut étant : « c:\Program Files (x86)\JAVA\JRx\Bin »
+Vous pouvez télécharger JAVA 19 sur ce [lien](https://www.oracle.com/java/technologies/downloads/) 
+
+## Exécution (Linux)
+Ouvrez les propriétés du .jar en faisant clic droit. Allez dans permissions et cochez la case "*Autoriser l'exécution du fichier comme un programme*".
+
+Puis faîtes clic droit sur le .jar et selectionnez *"ouvrir avec"* et selectionnez *"Open JDK Runtime"*
+
+---
+Sinon, vous pouvez juste ouvrir le fichier avec la commande 
+
+```bash
+  java -jar AppAirline.jar
+```
