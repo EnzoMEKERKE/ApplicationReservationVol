@@ -15,15 +15,10 @@ Pour connaître sa version de JAVA sur terminal (Linux et Windows) :
 
 Vous pouvez télécharger JAVA 19 sur ce [lien](https://www.oracle.com/java/technologies/downloads/) 
 
-## Exécution (Linux)
+## Exécution
 vous pouvez juste ouvrir le fichier avec la commande 
 
 ```bash
   java -jar AppAirline.jar
 ```
-## Exécution (Windows)
 
-Rendez vous dans le dossier où se trouve l'application puis lancez la commande 
-```bash
-  java -jar AppAirline.jar
-```
