@@ -26,3 +26,9 @@ Sinon, vous pouvez juste ouvrir le fichier avec la commande
 ```bash
   java -jar AppAirline.jar
 ```
+## Exécution (Windows)
+
+Rendez vous dans le dossier où se trouve l'application puis lancez la commande 
+```bash
+  java -jar AppAirline.jar
+```
