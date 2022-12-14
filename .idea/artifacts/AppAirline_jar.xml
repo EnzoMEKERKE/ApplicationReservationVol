@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="AppAirline:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/AppAirline_jar</output-path>
+    <root id="archive" name="AppAirline.jar">
+      <element id="module-output" name="AppAirline" />
+    </root>
+  </artifact>
+</component>
