@@ -1,14 +1,24 @@
-# ApplicationReservationVol
-Ce dépôt contient une application en Java de réservation de flight.
+# AppAirline
 
-### Les prérequis (Windows)
-Suivre cette procédure si vous n'avez pas l'application JAVA sur votre PC :
+ce dépôt contient une application JAVA simulant une réservation de vol.
 
-1. Téléchargez JAVA sur ce lien : https://www.java.com/fr/download/
+## Les prérequis
 
-### Les prérequis (Linux)
+Vous aurez besoin de __JAVA 19__
 
 
-## Comment exécuter l'application ?
+Pour connaître sa version de JAVA sur terminal (Linux et Windows) :
 
-1. Placer le fichier JAR dans le même répertoire que l'application JAVA (Son emplacement par défaut étant : « c:\Program Files (x86)\JAVA\JRx\Bin »
+```bash
+java -version
+```
+
+Vous pouvez télécharger JAVA 19 sur ce [lien](https://www.oracle.com/java/technologies/downloads/) 
+
+## Exécution
+vous pouvez juste ouvrir le fichier avec la commande 
+
+```bash
+java -jar AppAirline.jar
+```
+
