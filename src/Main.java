@@ -243,11 +243,11 @@ public class Main {
                 }
                     break;
                 case "5": {
-                    admin.addVol(flights);
+                    admin.addFlight(flights);
                 }
                     break;
                 case "6": {
-                    admin.deleteVol(flights);
+                    admin.deleteFlight(flights);
                 }
                     break;
                 case "7": {
@@ -273,11 +273,11 @@ public class Main {
                 }
                     break;
                 case "11": {
-                    admin.addAeroport(airports);
+                    admin.addAirport(airports);
                 }
                     break;
                 case "12": {
-                    admin.deleteAeroport(airports);
+                    admin.deleteAirport(airports);
                 }
                     break;
                 case "13":
@@ -299,6 +299,7 @@ public class Main {
                 {
                     contChoice = false;
                 }
+                break;
                 default:
                     System.out.println("Invalid option");
             }
@@ -347,6 +348,7 @@ public class Main {
                         break;
                     }
                     c.addReservation(reservations.get(option));
+                    reservations.remove(option);
                     System.out.println("The reservation has been added");
                 }
                 break;
@@ -368,7 +370,7 @@ public class Main {
                         System.out.println("Invalid index");
                         break;
                     }
-                    c.deleteReservation(c.getReservations().get(reservationIndex - 1));
+                    c.deleteReservation(c.getReservations().get(reservationIndex));
                 }
                 break;
                 case "6":

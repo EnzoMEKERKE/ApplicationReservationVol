@@ -6,7 +6,6 @@ public class Admin extends Utilisateur {
     private final int id_connection;
 
     public Admin(String nom, String prenom, String adresse, String telephone, int id_connection) {
-        //check if id_connection already exists:
         super(nom, prenom, adresse, telephone);
         this.id_connection = id_connection;
     }
@@ -47,14 +46,14 @@ public class Admin extends Utilisateur {
 
     }
 
-   public void addVol(ArrayList<Flight> flights) {
+   public void addFlight(ArrayList<Flight> flights) {
        System.out.println("Please introduce data for the flight that you are willing to add: ");
        Flight v = Creator.createVol();
        flights.add(v);
        System.out.println("The flight " + v.toString() + " has been added");
     }
 
-    public void deleteVol(ArrayList<Flight> flights) {
+    public void deleteFlight(ArrayList<Flight> flights) {
         if(flights.isEmpty())
         {
             System.out.println("There are currently no flights available");
@@ -76,14 +75,14 @@ public class Admin extends Utilisateur {
         }
     }
 
-    public void addAeroport(ArrayList<Airport> airports) {
+    public void addAirport(ArrayList<Airport> airports) {
         System.out.println("Please introduce data for the airport that you are willing to add: ");
         Airport a = Creator.createAirport();
         airports.add(a);
         System.out.println("The airport " + a.toString() + " has been added");
     }
 
-    public void deleteAeroport(ArrayList<Airport> airports ) {
+    public void deleteAirport(ArrayList<Airport> airports ) {
         if(airports.isEmpty())
         {
             System.out.println("There are currently no airports available");
