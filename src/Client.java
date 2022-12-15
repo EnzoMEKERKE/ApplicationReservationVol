@@ -80,8 +80,5 @@ public class Client extends Utilisateur {
                  System.out.println(res);
         }
     }
-//    public void seeAllReservations() {
-//
-//    }
 
 }

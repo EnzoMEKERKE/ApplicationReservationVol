@@ -3,7 +3,7 @@ import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
 public class Creator {
-    public static int countVol = 0;
+    private static int countVol = 0;
     static Director director = new Director();
     static AeronefBuilder builder = new AeronefBuilder();
     static Scanner scanner = new Scanner(System.in);
