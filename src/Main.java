@@ -183,7 +183,7 @@ public class Main {
         choice = scanner.nextInt();
         scanner.nextLine();
 
-        if(choice != admin.getId_connection())
+        if(choice != admin.getIdConnection())
         {
             System.out.println("Invalid identifier");
             return;

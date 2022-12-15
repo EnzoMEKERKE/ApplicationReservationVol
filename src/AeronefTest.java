@@ -52,7 +52,7 @@ class AeronefTest {
 
     @Test
     void getModel_number() {
-        assertEquals(aeronef.getModel_number(), 25);
+        assertEquals(aeronef.getModelNumber(), 25);
     }
 
     @Test

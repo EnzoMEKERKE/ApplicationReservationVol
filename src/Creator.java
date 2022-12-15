@@ -10,26 +10,20 @@ public class Creator {
 
     public static Reservation createReservation()
     {
-        //Reservation r = new Reservation(0, null, null, 0, false, new Flight(null, null, 0, null, 0, null, null, null, null));
         System.out.println("Please enter the price of the reservation: ");
         int price = scanner.nextInt();
-        //r.setPrice(scanner.nextInt());
         scanner.nextLine();
         System.out.println("Please enter the departure city: ");
         String Departure = scanner.nextLine();
-        //r.setDeparture(scanner.nextLine());
 
         System.out.println("Please enter the arrival city: ");
         String Arrival = scanner.nextLine();
-        //r.setArrival(scanner.nextLine());
 
         System.out.println("Please enter the id of the reservation: ");
         int id = scanner.nextInt();
-        //r.setId(scanner.nextInt());
         scanner.nextLine();
 
         Flight f = createVol();
-        //r.setFlight(createVol(r));
         return new Reservation(price, Departure, Arrival, id,false, f);
     }
 

@@ -2,7 +2,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static org.junit.jupiter.api.Assertions.*;
 import java.util.Collections;
@@ -24,10 +23,11 @@ class SortingAlgosTest {
         IntegerSorting = new SortingAlgos<>();
         Collections.sort(IntegerList2);
     }
-    @Test
-    void quicksort() {
 
-        IntegerSorting.quicksort(IntegerList, 0, IntegerList.size() - 1);
+    @Test
+    void quickSort() {
+
+        IntegerSorting.quickSort(IntegerList, 0, IntegerList.size() - 1);
 
         assertArrayEquals(IntegerList.toArray(), IntegerList2.toArray());
 

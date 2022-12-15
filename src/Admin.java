@@ -3,16 +3,16 @@ import java.util.Scanner;
 
 public class Admin extends Utilisateur {
 
-    private final int id_connection;
+    private final int idConnection;
 
-    public Admin(String nom, String prenom, String adresse, String telephone, int id_connection) {
+    public Admin(String nom, String prenom, String adresse, String telephone, int idConnection) {
         super(nom, prenom, adresse, telephone);
-        this.id_connection = id_connection;
+        this.idConnection = idConnection;
     }
 
-    public int getId_connection()
+    public int getIdConnection()
     {
-        return id_connection;
+        return idConnection;
     }
     //Adding reservations that will be accessible to all customers:
     public void addReservation(ArrayList<Reservation> reservations) {

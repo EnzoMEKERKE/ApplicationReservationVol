@@ -18,8 +18,8 @@ class AdminTest {
     }
 
     @Test
-    void getId_connection() {
-        assertEquals(admin.getId_connection(), 1);
+    void getIdConnection() {
+        assertEquals(admin.getIdConnection(), 1);
     }
 
     @Test

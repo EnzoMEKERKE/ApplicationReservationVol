@@ -6,7 +6,7 @@ public class AeronefBuilder implements Builder{
     private double priceKM;
     private int autonomie;
     private int vitesse;
-    private int model_number;
+    private int modelNumber;
 
 
     @Override
@@ -47,10 +47,10 @@ public class AeronefBuilder implements Builder{
     @Override
     public void setModelNumber(int modelNumber)
     {
-        this.model_number  = modelNumber;
+        this.modelNumber = modelNumber;
     }
 
     public Aeronef getResult() {
-        return new Aeronef(type, CurrentAirport,pilot, capacity, priceKM, autonomie,vitesse, model_number);
+        return new Aeronef(type, CurrentAirport,pilot, capacity, priceKM, autonomie,vitesse, modelNumber);
     }
 }

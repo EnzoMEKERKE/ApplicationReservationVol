@@ -6,9 +6,9 @@ public class Aeronef implements Comparable<Aeronef> {
     private double priceKM;
     private final int autonomie;
     private final int vitesse;
-    private final int model_number;
+    private final int modelNumber;
 
-    protected Aeronef(AeronefType type, Airport currentAirport, Pilot pilot, int capacity, double priceKM, int autonomie, int vitesse, int model_number) {
+    protected Aeronef(AeronefType type, Airport currentAirport, Pilot pilot, int capacity, double priceKM, int autonomie, int vitesse, int modelNumber) {
         this.type = type;
         CurrentAirport = new Airport(currentAirport);
         this.pilot = new Pilot(pilot);
@@ -16,7 +16,7 @@ public class Aeronef implements Comparable<Aeronef> {
         this.priceKM = priceKM;
         this.autonomie = autonomie;
         this.vitesse = vitesse;
-        this.model_number = model_number;
+        this.modelNumber = modelNumber;
     }
 
 
@@ -48,8 +48,8 @@ public class Aeronef implements Comparable<Aeronef> {
         return vitesse;
     }
 
-    public int getModel_number() {
-        return model_number;
+    public int getModelNumber() {
+        return modelNumber;
     }
 
     @Override
@@ -62,7 +62,7 @@ public class Aeronef implements Comparable<Aeronef> {
                 ", priceKM=" + priceKM +
                 ", autonomie=" + autonomie +
                 ", vitesse=" + vitesse +
-                ", model_number=" + model_number +
+                ", modelNumber=" + modelNumber +
                 '}';
     }
 

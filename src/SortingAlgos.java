@@ -1,11 +1,9 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Random;
 
 public class SortingAlgos<T extends Comparable<T>> {
 
 
-    public void quicksort(ArrayList<T> array, int startIndex, int endIndex)
+    public void quickSort(ArrayList<T> array, int startIndex, int endIndex)
     {
         if(startIndex < endIndex)
         {
@@ -17,8 +15,8 @@ public class SortingAlgos<T extends Comparable<T>> {
             array.set(pivotIndex, temp);
 
             int leftPointer = partition(array, startIndex, endIndex, pivot);
-            quicksort(array, startIndex, leftPointer - 1);
-            quicksort(array, leftPointer + 1, endIndex);
+            quickSort(array, startIndex, leftPointer - 1);
+            quickSort(array, leftPointer + 1, endIndex);
         }
     }
 
