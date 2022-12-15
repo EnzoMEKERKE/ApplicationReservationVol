@@ -20,7 +20,9 @@ vous pouvez juste ouvrir le fichier avec la commande
 
 ```bash
 java -jar AppAirline.jar
-```
+``
+si vous clônez ce repo, n'oubliez pas de changer le chemin du "src" afin de pouvoir run les classes
+
 ## Exécution des tests
 Sur IntelliJ IDEA, allez dans "Help", "Edit Custom VM Options" puis ajoutez cette ligne :
 
