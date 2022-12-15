@@ -386,15 +386,21 @@ public class Main {
                 }
                 break;
                 case "5": {
-                    System.out.println("Please choose a reservation to delete:");
-                    c.seeReservations();
-                    int reservationIndex = scanner.nextInt();
-                    scanner.nextLine();
-                    if (reservationIndex >= c.getReservations().size()) {
-                        System.out.println("Invalid index");
-                        break;
+                    if(c.getReservations().size() == 0)
+                    {
+                        System.out.println("There are no current reservations available");
                     }
-                    c.deleteReservation(c.getReservations().get(reservationIndex));
+                    else{
+                        System.out.println("Please choose a reservation to delete:");
+                        c.seeReservations();
+                        int reservationIndex = scanner.nextInt();
+                        scanner.nextLine();
+                        if (reservationIndex >= c.getReservations().size()) {
+                            System.out.println("Invalid index");
+                            break;
+                        }
+                        c.deleteReservation(c.getReservations().get(reservationIndex));
+                    }
                 }
                 break;
                 case "6":
