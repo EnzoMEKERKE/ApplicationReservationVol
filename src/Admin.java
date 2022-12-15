@@ -22,6 +22,7 @@ public class Admin extends Utilisateur {
         System.out.println("The reservation " + r.toString() + " has been added");
     }
 
+
     //Deleting a reservation that will no longer be accessible:
     public void deleteReservation(ArrayList<Reservation> reservations) {
         if(reservations.isEmpty())

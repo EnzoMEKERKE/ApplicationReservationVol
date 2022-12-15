@@ -27,13 +27,7 @@ public class Client extends Utilisateur {
     }
 
     public void deleteReservation(Reservation reservation) {
-        for(Reservation res : reservations)
-        {
-            if(reservation.equals(res))
-            {
-                reservations.remove(res);
-            }
-        }
+        reservations.remove(reservation);
     }
 
     public void deleteExpiredReservations() throws ParseException {
