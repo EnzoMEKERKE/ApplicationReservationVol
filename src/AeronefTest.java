@@ -54,13 +54,4 @@ class AeronefTest {
     void getModel_number() {
         assertEquals(aeronef.getModelNumber(), 25);
     }
-
-    @Test
-    void testToString() {
-
-    }
-
-    @Test
-    void compareTo() {
-    }
 }
