@@ -22,7 +22,7 @@ vous pouvez juste ouvrir le fichier avec la commande
 java -jar AppAirline.jar
 ```
 ## Exécution des tests
-Sur Intellij Ideas, allez dans "Help", "Edit Custom VM Options" puis ajoutez cette ligne :
+Sur IntelliJ IDEA, allez dans "Help", "Edit Custom VM Options" puis ajoutez cette ligne :
 
 ```bash
 -Deditable.java.test.console=true
