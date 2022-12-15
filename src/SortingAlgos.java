@@ -1,8 +1,17 @@
 import java.util.ArrayList;
 
+/**
+ * This class is used to define merge sort and quick sort algorithms for generic types
+ * @param <T> - generic type that must extend Comparable
+ */
 public class SortingAlgos<T extends Comparable<T>> {
 
-
+    /**
+     * QuickSort method - sorts an ArrayList of generic types using QuickSort algorithm by choosing the pivot as the median of 3 (first, middle, last)
+     * @param array - the list to be sorted
+     * @param startIndex - the starting index
+     * @param endIndex - the ending index
+     */
     public void quickSort(ArrayList<T> array, int startIndex, int endIndex)
     {
         if(startIndex < endIndex)
@@ -20,6 +29,13 @@ public class SortingAlgos<T extends Comparable<T>> {
         }
     }
 
+    /**
+     * Method used to get the median of 3 elements and sort them is ascending order
+     * @param array - the list to be sorted
+     * @param startIndex - the starting index
+     * @param endIndex - the ending index
+     * @return the position of the pivot
+     */
     private int getMedOf3(ArrayList<T> array, int startIndex, int endIndex)
     {
         int mid = startIndex + (endIndex - startIndex) / 2;
@@ -35,6 +51,12 @@ public class SortingAlgos<T extends Comparable<T>> {
         return mid;
     }
 
+    /**
+     * Method used to swap two elements in an ArrayList
+     * @param array - the list of elements
+     * @param leftPoz - the position of the first element
+     * @param rightPoz - the position of the second element
+     */
     private void swap(ArrayList<T> array, int leftPoz, int rightPoz)
     {
         T temp = array.get(leftPoz);
@@ -42,7 +64,14 @@ public class SortingAlgos<T extends Comparable<T>> {
         array.set(rightPoz, temp);
     }
 
-
+    /**
+     * Method used to get the position of the pivot
+     * @param array - the list to be sorted
+     * @param startIndex - the starting index
+     * @param endIndex - the ending index
+     * @param pivot - the pivot
+     * @return the position of the pivot when all the smaller elements are in its left and all the bigger elements are in its right
+     */
     private int partition(ArrayList<T> array, int startIndex, int endIndex, T pivot)
     {
         int leftPointer = startIndex;
@@ -73,7 +102,12 @@ public class SortingAlgos<T extends Comparable<T>> {
 
     }
 
-
+    /**
+     * MergeSort method - sorts an ArrayList of generic types using MergeSort algorithm
+     * @param array - the list to be sorted
+     * @param startIndex - the starting index
+     * @param endIndex - the ending index
+     */
     public void mergeSort(ArrayList<T> array, int startIndex, int endIndex){
         if(startIndex < endIndex)
         {
@@ -85,6 +119,13 @@ public class SortingAlgos<T extends Comparable<T>> {
         }
     }
 
+    /**
+     * Actual merge method
+     * @param array - the list of elements to be sorted
+     * @param startIndex - the starting index
+     * @param mid - the middle element
+     * @param endIndex - the ending index
+     */
     private void merge(ArrayList<T> array, int startIndex, int mid, int endIndex) {
         ArrayList<T> leftArray = new ArrayList<>();
         ArrayList<T> rightArray = new ArrayList<>();

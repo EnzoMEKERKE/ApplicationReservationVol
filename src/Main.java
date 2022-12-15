@@ -1,6 +1,9 @@
 import java.text.ParseException;
 import java.util.*;
 
+/**
+ * This represents the main class of the project
+ */
 public class Main {
     //user -> switch between admin and client + give menu for both;
     //use threads;
@@ -59,7 +62,7 @@ public class Main {
         Flight f2 = new Flight("Copenhagen Airport", "Otopeni", 2, plane1, 0, "23/12/2022", "24/12/2022", "09:12", "12:29");
         Flight f3 = new Flight("Cologne Bonn", "Helsinki Airport", 3, plane2, 0, "02/01/2023", "02/01/2023", "16:00", "17:56");
         Flight f4 = new Flight("Marseille Provence", "Otopeni", 4, plane3, 0, "18/12/2022", "19/12/2022", "17:10", "00:12");
-        Flight f5 = new Flight("Copenhagen Airport", "Marseille Provence", 5, plane5, 0, "20/12/2022", "21/12/2022", "03:55", "07:11");;
+        Flight f5 = new Flight("Copenhagen Airport", "Marseille Provence", 5, plane5, 0, "10/12/2022", "10/12/2022", "03:55", "07:11");;
 
         flights.add(f1);
         flights.add(f2);
@@ -101,6 +104,9 @@ public class Main {
         }while(!stop);
     }
 
+    /**
+     * Method used to connect a client
+     */
     public static void connectClient()
     {
         String choice;
@@ -125,6 +131,9 @@ public class Main {
 
     }
 
+    /**
+     * Method used to create a new client
+     */
     public static void createClient() {
         String nom;
         String prenom;
@@ -155,6 +164,10 @@ public class Main {
         }
 
     }
+
+    /**
+     * Method used to connect an existing client
+     */
     public static void existingClient()
     {
         String phoneNumber;
@@ -176,6 +189,10 @@ public class Main {
         }
 
     }
+
+    /**
+     * Method used to connect the admin
+     */
     public static void connectAdmin()
     {
         int choice;
@@ -193,6 +210,9 @@ public class Main {
 
     }
 
+    /**
+     * This method represents the options of the menu for the admin
+     */
     public static void menuAdmin()
     {
         String choiceAdmin;
@@ -306,6 +326,10 @@ public class Main {
         }while(contChoice);
     }
 
+    /**
+     * This method represents the options for the menu of the client
+     * @param c - the client of the application
+     */
     public static void menuClient(Client c)
     {
         String choiceClient;

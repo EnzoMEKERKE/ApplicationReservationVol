@@ -1,8 +1,15 @@
 import java.util.Scanner;
 
+/**
+ * This class represents the Director in the Builder design pattern - used to instantiate an object of type Aeronef
+ */
 public class Director {
     final Scanner scanner = new Scanner(System.in);
 
+    /**
+     * Method used for constructing a plane of type DR400 with fixed parameters
+     * @param builder - the builder object for the construction
+     */
     public void constructFixedDR400(Builder builder)
     {
         builder.setAeronefType(AeronefType.DR400);
@@ -14,6 +21,10 @@ public class Director {
         builder.setVitesse(400);
         builder.setModelNumber(1221);
     }
+    /**
+     * Method used for constructing a plane of type CESSNA152 with fixed parameters
+     * @param builder - the builder object for the construction
+     */
     public void constructFixedCessna152(Builder builder)
     {
         builder.setAeronefType(AeronefType.CESSNA152);
@@ -25,6 +36,10 @@ public class Director {
         builder.setVitesse(350);
         builder.setModelNumber(1234);
     }
+    /**
+     * Method used for constructing a plane of type Fouga Magister with fixed parameters
+     * @param builder - the builder object for the construction
+     */
     public void constructFixedFougaMagister(Builder builder)
     {
         builder.setAeronefType(AeronefType.FOUGA_MAGISTER);
@@ -36,6 +51,10 @@ public class Director {
         builder.setVitesse(325);
         builder.setModelNumber(1341);
     }
+    /**
+     * Method used for constructing a plane of type PA28 with fixed parameters
+     * @param builder - the builder object for the construction
+     */
     public void constructFixedPA28(Builder builder)
     {
         builder.setAeronefType(AeronefType.PA28);
@@ -47,18 +66,30 @@ public class Director {
         builder.setVitesse(330);
         builder.setModelNumber(4213);
     }
+
+    /**
+     * Method used for constructing a plane of type DR400 with input from user
+     * @param builder - the builder object for the construction
+     */
     public void constructDR400(Builder builder)
     {
         builder.setAeronefType(AeronefType.DR400);
         constructPlane(builder);
     }
-
+    /**
+     * Method used for constructing a plane of type CESSNA152 with input from user
+     * @param builder - the builder object for the construction
+     */
     public void constructCESSNA152(Builder builder)
     {
         builder.setAeronefType(AeronefType.CESSNA152);
         constructPlane(builder);
     }
 
+    /**
+     * Method used for constructing a plane of type Fouga Magister with input from user
+     * @param builder - the builder object for the construction
+     */
     public void constructFOUGA_MAGISTER(Builder builder)
     {
         builder.setAeronefType(AeronefType.FOUGA_MAGISTER);
@@ -66,6 +97,10 @@ public class Director {
 
     }
 
+    /**
+     * Method used for constructing a plane of type PA28 with input from user
+     * @param builder - the builder object for the construction
+     */
     public void constructPA28(Builder builder)
     {
         builder.setAeronefType(AeronefType.PA28);
@@ -73,8 +108,13 @@ public class Director {
 
     }
 
+    /**
+     * This method is used to construct any type of plane with input from the user
+     * @param builder - the buildeer object for the construction
+     */
     public void constructPlane(Builder builder)
     {
+        scanner.nextLine();
         System.out.println("Please enter the name of the airport where the plane is taking off: ");
         String name = scanner.nextLine();
         System.out.println("Please enter the city of the airport where the plane is taking off: ");

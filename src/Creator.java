@@ -2,12 +2,19 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
+/**
+ * This class is used to create objects of different types with input from user
+ */
 public class Creator {
     private static int countVol = 0;
     static Director director = new Director();
     static AeronefBuilder builder = new AeronefBuilder();
     static Scanner scanner = new Scanner(System.in);
 
+    /**
+     * Method used to create an object of type reservation
+     * @return object of type reservation
+     */
     public static Reservation createReservation()
     {
         System.out.println("Please enter the price of the reservation: ");
@@ -27,6 +34,10 @@ public class Creator {
         return new Reservation(price, Departure, Arrival, id,false, f);
     }
 
+    /**
+     * Method used to create an object of type Pilot
+     * @return object of type Pilot
+     */
     public static Pilot createPilot()
     {
         Pilot p = new Pilot(null, 0);
@@ -40,6 +51,10 @@ public class Creator {
         return p;
     }
 
+    /**
+     * Method used to create an object of type Airport
+     * @return object of type Airport
+     */
     public static Airport createAirport()
     {
         Airport a = new Airport(null, null);
@@ -52,6 +67,10 @@ public class Creator {
         return a;
     }
 
+    /**
+     * Method used to create an object of type Aeronef
+     * @return object of type Aeronef
+     */
     public static Aeronef createAeronef()
     {
         System.out.println("Select the type of plane you would like to construct:\n 1. DR400 \n 2. CESSNA152 \n 3. FOUGA MAGISTER \n 4. PA28");
@@ -67,6 +86,10 @@ public class Creator {
         return builder.getResult();
     }
 
+    /**
+     * Method used to create an object of type Flight
+     * @return object of type Flight
+     */
     public static Flight createVol(Reservation r)
     {
         String departure = r.getDeparture();
@@ -152,6 +175,11 @@ public class Creator {
         return new Flight(departure, arrival, idFlight, avion, 0, departureDate, arrivalDate, departureHour, arrivalHour);
     }
 
+    /**
+     * Method to check is a string is a valid date of format dd/MM/yyyy
+     * @param date - a string representing departure date or arrival date
+     * @return true if the string is a valid date type, false otherwise
+     */
     public static boolean isValidDate(String date)
     {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
@@ -168,6 +196,11 @@ public class Creator {
         return true;
     }
 
+    /**
+     * Method to check is a string is a valid hour of format HH:mm
+     * @param hour - a string representing departure hour or arrival hour
+     * @return true if the string is a valid hour type, false otherwise
+     */
     public static boolean isValidHour(String hour)
     {
         SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm");
